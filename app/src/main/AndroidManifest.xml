@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.example.lurenman.servicedemo">
+    <uses-permission android:name="android.permission.INTERNET" />
+
+    <application
+        android:allowBackup="true"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:roundIcon="@mipmap/ic_launcher_round"
+        android:supportsRtl="true"
+        android:theme="@style/AppTheme">
+        <activity android:name=".MainActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity android:name=".activity.TestServiceActivity" />
+        <activity android:name=".activity.BinderServiceActivity" />
+        <activity android:name=".activity.MessengerActivity" />
+        <activity android:name=".activity.ForegroundActivity" />
+        <activity android:name=".activity.BinderServiceTest1Activity" />
+        <activity android:name=".activity.BinderServiceTest2Activity" />
+        <activity android:name=".activity.IntentServiceActivity" />
+
+        <service android:name=".service.TestService" />
+        <service android:name=".service.BinderService" />
+        <!--其中android:process=":remote"代表该Service在单独的进程中创建-->
+        <service android:name=".service.MessengerService"
+            android:process=":remote"
+            />
+        <service android:name=".service.ForegroundService" />
+        <service android:name=".service.MyIntentService" />
+    </application>
+
+</manifest>
